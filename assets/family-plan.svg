@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-labelledby="title desc">
+  <title id="title">Kompas.id family plan product</title>
+  <desc id="desc">A family subscription mockup with multiple user cards.</desc>
+  <rect width="640" height="800" rx="36" fill="#EEFCD2"/>
+  <rect x="100" y="112" width="440" height="576" rx="34" fill="#FFFFFF"/>
+  <rect x="140" y="160" width="360" height="96" rx="18" fill="#00559A"/>
+  <text x="174" y="220" fill="#FFFFFF" font-family="PT Sans, Arial, sans-serif" font-size="34" font-weight="700">Paket Keluarga</text>
+  <circle cx="226" cy="390" r="58" fill="#E1F0FF"/>
+  <circle cx="320" cy="358" r="70" fill="#FFCC00"/>
+  <circle cx="414" cy="390" r="58" fill="#E1F0FF"/>
+  <path d="M168 548c54-72 112-100 152-100s98 28 152 100" fill="none" stroke="#50A718" stroke-width="34" stroke-linecap="round"/>
+  <rect x="176" y="610" width="288" height="32" rx="16" fill="#F4F4F4"/>
+</svg>
