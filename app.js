@@ -1,3 +1,9 @@
+const PURCHASE_TYPES = Object.freeze({
+  SHOPPING: 'Produk Belanja',
+  SUBSCRIPTION: 'Produk Langganan',
+});
+const PURCHASE_TYPE_FIELD = 'Jenis Pembelian';
+
 const products = [
   {
     id: 'source-17',
@@ -13,6 +19,24 @@ const products = [
     description: 'Akses semua artikel premium, ePaper, dan berita eksklusif di Kompas.id.',
     longDescription:
       'Kompas Digital Premium memberikan akses semua artikel premium, ePaper, dan berita eksklusif di Kompas.id. Produk ini cocok untuk pembaca yang ingin mengikuti berita mendalam, opini, audio berita, TTS, dan arsip digital Kompas melalui web, iOS, maupun Android.',
+    longDescriptionHtml: `
+      <p>Kompas Digital Premium memberikan akses semua artikel premium, ePaper, dan berita eksklusif di Kompas.id. Produk ini cocok untuk pembaca yang ingin mengikuti berita mendalam, opini, audio berita, TTS, dan arsip digital Kompas melalui web, iOS, maupun Android.</p>
+      <h3>Yang kamu dapat:</h3>
+      <ul>
+        <li>Akses semua artikel Kompas.id.</li>
+        <li>ePaper Kompas.id.</li>
+        <li>TTS dan Audio Berita Kompas.id.</li>
+        <li>Akses artikel Opini eksklusif dan artikel interaktif.</li>
+        <li>Buku Kompas.id.</li>
+        <li>Akses multiplatform: Web, iOS, dan Android.</li>
+        <li>ePaper regional Tribun.</li>
+      </ul>
+      <h3>Periode Langganan</h3>
+      <ul>
+        <li>1 bulan: Rp50.000.</li>
+        <li>1 tahun: Rp360.000.</li>
+      </ul>
+    `,
     details: [
       'Akses semua artikel Kompas.id',
       'ePaper Kompas.id',
@@ -50,6 +74,7 @@ const products = [
     longDescription:
       'Kompas One Premium menghadirkan satu akses langganan untuk menikmati konten premium lintas platform Kompas Gramedia. Cocok untuk pembaca yang ingin mengikuti berita harian, analisis bisnis, ePaper, dan konten premium melalui satu akun.',
     longDescriptionHtml: `
+      <p>Kompas One Premium dirancang untuk pembaca yang membutuhkan akses informasi menyeluruh: berita tepercaya, analisis ekonomi, laporan bisnis, dan konten premium dalam satu paket langganan.</p>
       <h3>Yang kamu dapat:</h3>
       <ul>
         <li>Akses premium Kompas.id untuk artikel mendalam, ePaper, TTS, dan audio berita.</li>
@@ -57,8 +82,6 @@ const products = [
         <li>Akses Kontan digital untuk berita bisnis, pasar, dan keuangan.</li>
         <li>Satu akun Kompas.id untuk pengalaman baca lintas perangkat.</li>
       </ul>
-      <h3>Deskripsi Produk</h3>
-      <p>Kompas One Premium dirancang untuk pembaca yang membutuhkan akses informasi menyeluruh: berita tepercaya, analisis ekonomi, laporan bisnis, dan konten premium dalam satu paket langganan.</p>
       <h3>Periode Langganan</h3>
       <ul>
         <li>Bulanan: aktif 30 hari setelah pembayaran terverifikasi.</li>
@@ -86,6 +109,110 @@ const products = [
     },
   },
   {
+    id: 'source-20',
+    name: 'Kompas Digital Premium + Koran',
+    category: 'Langganan',
+    startingPrice: true,
+    price: 250000,
+    originalPrice: null,
+    sold: '1,4 rb',
+    stock: 999,
+    sku: 'GERAI-KDP-KORAN-582604',
+    badge: 'Bundling',
+    image: './assets/product-kompas-digital-premium-koran.png',
+    description:
+      'Paket langganan Kompas Digital Premium dengan koran cetak Harian Kompas yang dikirim ke alamat pilihan.',
+    longDescription:
+      'Kompas Digital Premium + Koran menggabungkan akses digital Kompas.id dengan pengalaman membaca Harian Kompas cetak di rumah. Produk ini cocok untuk pembaca yang ingin mengikuti berita mendalam secara digital sekaligus tetap menikmati koran fisik setiap hari. Setelah pembayaran terverifikasi, akses digital dikirim melalui email akun pembeli dan pengiriman koran diproses ke alamat yang terdaftar.',
+    longDescriptionHtml: `
+      <p>Paket ini dirancang untuk pembaca yang membutuhkan akses berita tepercaya lintas kanal. Akses digital memberi keleluasaan membaca di mana saja, sementara koran cetak menghadirkan pengalaman membaca Kompas secara lengkap di rumah.</p>
+      <h3>Yang kamu dapat:</h3>
+      <ul>
+        <li>Akses semua artikel premium Kompas.id.</li>
+        <li>ePaper Kompas.id dan arsip digital pilihan.</li>
+        <li>TTS, audio berita, artikel opini eksklusif, dan konten interaktif.</li>
+        <li>Harian Kompas cetak dikirim ke alamat pelanggan sesuai periode langganan.</li>
+        <li>Akses multiplatform melalui web, iOS, dan Android.</li>
+      </ul>
+      <h3>Periode Langganan</h3>
+      <ul>
+        <li>1 Bulan: Rp250.000.</li>
+        <li>3 Bulan: Rp706.000.</li>
+        <li>6 Bulan: Rp1.353.000.</li>
+      </ul>
+    `,
+    details: [
+      'Produk: Kompas Digital Premium + Koran',
+      'Termasuk akses Kompas.id Premium',
+      'Termasuk Harian Kompas cetak',
+      'Aktivasi digital menggunakan akun Kompas.id',
+      'Periode langganan: 1 Bulan, 3 Bulan, atau 6 Bulan',
+      'Pengiriman koran mengikuti cakupan area layanan Harian Kompas',
+    ],
+    shippingText:
+      'Koran cetak dikirim ke alamat pelanggan setelah pembayaran terverifikasi dan alamat masuk area layanan. Instruksi aktivasi digital dikirim terpisah melalui email pembeli. Perubahan alamat dapat dilakukan melalui layanan pelanggan sesuai ketentuan yang berlaku.',
+    formats: ['Bundling'],
+    periods: ['1 Bulan', '3 Bulan', '6 Bulan'],
+    requiresShipping: true,
+    periodPrices: {
+      '1 Bulan': { price: 250000 },
+      '3 Bulan': { price: 706000 },
+      '6 Bulan': { price: 1353000 },
+    },
+    variantPrices: {
+      Bundling: { price: 250000 },
+    },
+  },
+  {
+    id: 'source-21',
+    name: 'Kompas Professional Mining',
+    category: 'Langganan',
+    price: 1500000,
+    originalPrice: null,
+    sold: '620',
+    stock: 999,
+    sku: 'GERAI-KPMINING-742931',
+    badge: 'Langganan',
+    image: './assets/product-kompas-professional-mining.png',
+    description:
+      'Langganan tahunan untuk profesional yang membutuhkan kurasi berita, analisis ekonomi, regulasi, dan dinamika industri pertambangan.',
+    longDescription:
+      'Kompas Professional Mining adalah paket akses digital tahunan untuk pembaca profesional yang mengikuti sektor pertambangan, energi, komoditas, dan kebijakan publik. Produk ini membantu pengguna memantau isu bisnis, regulasi, keberlanjutan, hingga dampak sosial ekonomi industri melalui ekosistem informasi Kompas.id.',
+    longDescriptionHtml: `
+      <p>Dirancang untuk profesional, analis, konsultan, akademisi, dan pengambil keputusan yang membutuhkan referensi informasi tepercaya terkait sektor pertambangan. Akses diaktifkan melalui akun Kompas.id setelah pembayaran terverifikasi.</p>
+      <h3>Yang kamu dapat:</h3>
+      <ul>
+        <li>Akses Kompas.id Premium selama 1 tahun.</li>
+        <li>Kurasi artikel ekonomi, bisnis, energi, komoditas, dan pertambangan.</li>
+        <li>ePaper Kompas.id dan arsip berita pilihan untuk kebutuhan riset.</li>
+        <li>Artikel opini, analisis kebijakan, serta liputan mendalam terkait industri strategis.</li>
+        <li>Akses multiplatform melalui web, iOS, dan Android.</li>
+      </ul>
+      <h3>Periode Langganan</h3>
+      <ul>
+        <li>1 Tahun: Rp1.500.000.</li>
+      </ul>
+    `,
+    details: [
+      'Produk: Kompas Professional Mining',
+      'Periode langganan: 1 Tahun',
+      'Termasuk akses Kompas.id Premium',
+      'Fokus kurasi: pertambangan, energi, komoditas, regulasi, dan ekonomi',
+      'Aktivasi menggunakan akun Kompas.id',
+      'Dapat digunakan di web, iOS, dan Android',
+    ],
+    shippingText:
+      'Produk digital diaktifkan setelah pembayaran terverifikasi. Instruksi aktivasi dikirim melalui email akun pembeli. Produk ini tidak memerlukan pengiriman fisik.',
+    formats: ['Digital'],
+    periods: ['1 Tahun'],
+    periodPrices: {
+      '1 Tahun': { price: 1500000 },
+    },
+    variantPrices: {
+      Digital: { price: 1500000 },
+    },
+  },
+  {
     id: 'source-18',
     name: 'Bundling Pesta Bola: Tabloid Bola by Kompas Edisi Pesta Bola Amerika 2026 + Akses Kompas Digital Premium',
     category: 'Bundling',
@@ -107,13 +234,12 @@ const products = [
     longDescription:
       'Yang kamu dapat: produk fisik Tabloid Bola by Kompas Edisi Pesta Bola Amerika 2026, edisi collectible yang diproduksi terbatas setebal 40 halaman, serta akses Kompas.id untuk membaca berita Pesta Bola 2026 secara digital. Pilih paket Basic (Tabloid Only), Bundling Plus, atau Bundling Premium sesuai kebutuhan sebelum checkout.',
     longDescriptionHtml: `
+      <p>Dapetin sepaket Bundling Premium: Tabloid Bola by Kompas Edisi Pesta Bola Amerika 2026 + Jersei Erspo + Kompas.id. Detail paket sebagai berikut:</p>
       <h3>Yang kamu dapat:</h3>
       <h4>Fisik</h4>
       <p>Tabloid Bola by Kompas Edisi Pesta Bola Amerika 2026, edisi collectible yang diproduksi terbatas setebal 40 halaman.</p>
       <h4>Digital</h4>
       <p>Akses Kompas.id untuk membaca berita Pesta Bola 2026 secara digital.</p>
-      <h3>Deskripsi Produk</h3>
-      <p>Dapetin sepaket Bundling Premium: Tabloid Bola by Kompas Edisi Pesta Bola Amerika 2026 + Jersei Erspo + Kompas.id. Detail paket sebagai berikut:</p>
       <h4>Basic (Tabloid Only)</h4>
       <ul>
         <li>Tabloid Bola Edisi Khusus. Edisi collectible yang diproduksi terbatas setebal 40 halaman. Isinya, review tim dan pemain, analisis peluang juara, dan infografis menarik. Rp50.000.</li>
@@ -145,19 +271,27 @@ const products = [
     ],
     shippingText:
       'Produk fisik dikirim dari Kompas Palmerah setelah pembayaran terverifikasi. Jika paket memuat akses digital, instruksi aktivasi dikirim terpisah melalui email pembeli.',
-    formats: ['Basic (Tabloid Only)', 'Bundling Plus', 'Bundling Premium'],
+    formats: ['Basic (Tabloid Only)', 'Bundling Plus', 'Bundling Premium', 'eMagazine'],
     productTypeLabel: 'Bundling',
     optionLabel: 'Paket',
     requiresShipping: true,
+    productTypeByFormat: {
+      'Basic (Tabloid Only)': 'Fisik',
+      'Bundling Plus': 'Bundling',
+      'Bundling Premium': 'Bundling',
+      eMagazine: 'Digital',
+    },
     formatImageIndex: {
       'Basic (Tabloid Only)': 1,
       'Bundling Plus': 1,
       'Bundling Premium': 2,
+      eMagazine: 3,
     },
     variantPrices: {
       'Basic (Tabloid Only)': { price: 50000 },
       'Bundling Plus': { price: 99000, originalPrice: 125000 },
       'Bundling Premium': { price: 475000, originalPrice: 750000 },
+      eMagazine: { price: 25000 },
     },
   },
   {
@@ -601,6 +735,50 @@ const headerCategoryGroups = [
   },
 ];
 
+function slugifyCategorySegment(value = '') {
+  return value
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function headerCategoryChildSlug(group, child) {
+  if (group.slug === 'merchandise' && child === 'Bundling') {
+    return 'bundling';
+  }
+
+  return `${group.slug}-${slugifyCategorySegment(child)}`;
+}
+
+function allCategoryDefinitions() {
+  const allCategory = {
+    slug: 'semua-kategori',
+    name: 'Semua Kategori',
+    icon: 'grid',
+    thumbnail: './assets/category-all.png',
+    heroImage: './assets/category-all.png',
+    count: 'Semua produk',
+    tone: 'bg-[#F2E8FF] text-[#5B2A86]',
+    description:
+      'Jelajahi seluruh kategori Gerai Kompas: buku, merchandise, tiket, bundling, langganan, dan produk pilihan lainnya.',
+    labels: ['Bundling', 'Fisik', 'Digital'],
+  };
+  const childCategories = headerCategoryGroups.flatMap((group) => {
+    const parentCategory = categories.find((category) => category.slug === group.slug) || categories[0];
+    return group.children.map((child) => ({
+      ...parentCategory,
+      slug: headerCategoryChildSlug(group, child),
+      name: child,
+      parentSlug: group.slug,
+      description: `${child} dalam kategori ${group.title} Gerai Kompas. Temukan pilihan produk yang relevan, resmi, dan dikurasi untuk pembaca Kompas.`,
+      count: parentCategory.count,
+    }));
+  });
+
+  return [allCategory, ...categories, ...childCategories];
+}
+
 const collections = [
   {
     slug: 'terlaris',
@@ -634,6 +812,14 @@ const collections = [
       'Produk terbaru dari Gerai Kompas, mulai dari buku, paket langganan, bundling pilihan, sampai merchandise resmi yang baru tersedia untuk pembaca.',
     heroImage: './assets/section-terbaru-hero.png',
   },
+  {
+    slug: 'rekomendasi',
+    title: 'Rekomendasi',
+    productTitle: 'Semua Produk Rekomendasi',
+    description:
+      'Kurasi produk pilihan Gerai Kompas yang relevan untuk pembaca: buku, langganan, bundling, dan merchandise yang cocok untuk kebutuhan harian.',
+    heroImage: './assets/section-rekomendasi-hero.png',
+  },
 ];
 
 let quantity = 1;
@@ -652,10 +838,15 @@ let addressDeleteCandidateId = null;
 let promoDraft = '';
 let appliedPromoCode = '';
 let promoError = '';
+let autoPromoSnackbar = '';
+let autoPromoSnackbarType = 'success';
+let autoPromoSnackbarTimer = null;
 let isPromoModalOpen = false;
 let isPaymentMethodModalOpen = false;
 let isShareModalOpen = false;
 let isShareLinkCopied = false;
+let isAllCategoriesSheetOpen = false;
+let openAllCategoriesGroups = [];
 let pendingPaymentMethod = null;
 let openPaymentGroups = [];
 let cartPreviewActiveTab = 'belanja';
@@ -673,15 +864,6 @@ let cartItems = [
     productId: 'category-bundling-1',
     type: 'Bundling',
     formats: ['Bundling', 'Fisik', 'Digital'],
-    quantity: 1,
-    selected: true,
-    visible: true,
-  },
-  {
-    cartId: 'cart-2',
-    productId: 'category-langganan-1',
-    type: 'Digital',
-    formats: ['Digital'],
     quantity: 1,
     selected: true,
     visible: true,
@@ -717,6 +899,7 @@ let shouldScrollProductToTop = false;
 let lastRenderedLocationKey = '';
 let shouldSkipNextRouteScroll = false;
 let pendingScrollRestoreY = null;
+let pendingElementScrollRestores = [];
 let mobileCheckoutBarController = null;
 const categoryMobileVisibleCounts = {};
 const categoryMobileLoading = {};
@@ -742,6 +925,7 @@ let authIdentifierError = '';
 let isAuthenticated = true;
 let pendingWishlistProductId = null;
 let pendingAuthRedirect = '';
+let pendingAddressManagerOpen = false;
 
 const checkoutAddresses = [
   {
@@ -776,6 +960,12 @@ const promoCatalog = {
   PAYDAY35: {
     label: 'Promo Payday',
     value: 25000,
+  },
+  AUTORENEW10: {
+    label: 'Diskon Perpanjang Otomatis',
+    rate: 0.1,
+    maxValue: 50000,
+    auto: true,
   },
 };
 
@@ -875,13 +1065,26 @@ function isSubscriptionCartItem(item) {
   return item.type === 'Digital' || cartItemProduct(item).category === 'Langganan';
 }
 
+function isShoppingBundlingCartItem(item) {
+  const product = cartItemProduct(item);
+  return productPurchaseType(product) === PURCHASE_TYPES.SHOPPING && cartItemProductType(item) === 'Bundling';
+}
+
+function isCartLanggananTabItem(item) {
+  return isSubscriptionCartItem(item) || isShoppingBundlingCartItem(item);
+}
+
+function isLockedSubscriptionProduct(product = getSelectedProduct()) {
+  return product?.category === 'Langganan';
+}
+
 function cartItemQuantity(item) {
   return isSubscriptionCartItem(item) ? 1 : item.quantity;
 }
 
 function activeCartTabItems() {
   const items = visibleCartItems();
-  return cartActiveTab === 'langganan' ? items.filter(isSubscriptionCartItem) : items;
+  return cartActiveTab === 'langganan' ? items.filter(isCartLanggananTabItem) : items;
 }
 
 function cartItemSelectedInTab(item, tab = cartActiveTab) {
@@ -901,6 +1104,56 @@ function cartItemProduct(item) {
   return findProductById(item.productId) || products.find((product) => product.id === 'source-1') || products[0];
 }
 
+function cartItemProductType(item) {
+  const product = cartItemProduct(item);
+  return productTypeForFormat(product, item.type || '');
+}
+
+function checkoutPaymentPlanConstraint(items = checkoutOrderItems()) {
+  const cartTab = checkoutCartSourceTab(items);
+  if (cartTab === 'langganan') {
+    return {
+      plan: 'recurring',
+      source: 'cart-langganan',
+      icon: 'refresh',
+      title: 'Perpanjang Otomatis',
+      description: 'Pesanan dari Keranjang Langganan akan diperbarui otomatis sehingga Anda tidak perlu melakukan perpanjangan secara manual.',
+    };
+  }
+
+  if (cartTab === 'belanja') {
+    return {
+      plan: 'once',
+      source: 'cart-belanja',
+      icon: 'bank',
+      title: 'Sekali Bayar',
+      description: 'Pesanan dari Keranjang Belanja dibayar satu kali, tanpa perpanjangan otomatis.',
+    };
+  }
+
+  const lockedShoppingItem = items.find((item) => {
+    const product = cartItemProduct(item);
+    const productType = cartItemProductType(item);
+    return productPurchaseType(product) === PURCHASE_TYPES.SHOPPING && ['Digital', 'Fisik'].includes(productType);
+  });
+
+  if (lockedShoppingItem) {
+    const productType = cartItemProductType(lockedShoppingItem);
+    return {
+      plan: 'once',
+      source: `shopping-${productType.toLowerCase()}`,
+      icon: productType === 'Digital' ? 'card' : 'bank',
+      title: 'Sekali Bayar',
+      description: `Produk Belanja dengan jenis produk ${productType} dibayar satu kali, tanpa perpanjangan otomatis.`,
+    };
+  }
+
+  return {
+    plan: null,
+    source: 'selectable',
+  };
+}
+
 function cartItemTotals(item) {
   const product = cartItemProduct(item);
   const pricing = productVariantPricing(product, item.type, item.period);
@@ -914,6 +1167,44 @@ function cartItemTotals(item) {
     subtotal,
     discount,
   };
+}
+
+function cartItemVariantLabels(item, options = {}) {
+  const labels = [item.type, item.period].filter(Boolean);
+  if (options.includeProductType) {
+    const productType = cartItemProductType(item);
+    if (productType && !labels.includes(productType)) {
+      labels.unshift(productType);
+    }
+  }
+
+  if (!labels.length && item.formats?.length) {
+    labels.push(item.formats[0]);
+  }
+
+  return [...new Set(labels)];
+}
+
+function cartItemVariantBadges(item, options = {}) {
+  return cartItemVariantLabels(item, options)
+    .map((label) => badge(label, badgeVariantForLabel(label), 'checkout-format-badge'))
+    .join('');
+}
+
+function showSnackbar(message, type = 'success') {
+  autoPromoSnackbar = message;
+  autoPromoSnackbarType = type;
+}
+
+function renderPreservingScroll(scrollSelectors = []) {
+  pendingScrollRestoreY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  pendingElementScrollRestores = scrollSelectors
+    .map((selector) => {
+      const element = document.querySelector(selector);
+      return element ? { selector, scrollTop: element.scrollTop, scrollLeft: element.scrollLeft } : null;
+    })
+    .filter(Boolean);
+  render();
 }
 
 function cartSummaryTotals(items = selectedCartItems()) {
@@ -944,7 +1235,16 @@ const shippingOptions = [
 function checkoutNeedsShipping(items) {
   return items.some((item) => {
     const product = cartItemProduct(item);
+    const productType = cartItemProductType(item);
+    if (productType === 'Digital') {
+      return false;
+    }
+
     if (product.requiresShipping) {
+      return true;
+    }
+
+    if (productType === 'Bundling' || productType === 'Fisik') {
       return true;
     }
 
@@ -952,8 +1252,12 @@ function checkoutNeedsShipping(items) {
       return false;
     }
 
-    return item.type === 'Bundling' || item.type === 'Fisik';
+    return false;
   });
+}
+
+function checkoutNeedsStoreNote(items) {
+  return items.some((item) => cartItemProductType(item) !== 'Digital');
 }
 
 function selectedShippingOption() {
@@ -1005,6 +1309,7 @@ function checkoutOrderItems() {
   }
 
   const product = getSelectedProduct();
+  const isSubscriptionCheckoutProduct = product.category === 'Langganan' || selectedProductFormat === 'Digital';
   return [
     {
       cartId: 'checkout-single',
@@ -1012,7 +1317,7 @@ function checkoutOrderItems() {
       type: selectedProductFormat,
       formats: selectedProductFormats,
       period: selectedProductPeriod,
-      quantity,
+      quantity: isSubscriptionCheckoutProduct ? 1 : quantity,
       selected: true,
       visible: true,
       isSingleCheckout: true,
@@ -1094,6 +1399,10 @@ function categoryUrl(slug = 'buku') {
   params.delete('product');
   params.delete('type');
   params.delete('types');
+  params.delete('period');
+  params.delete('checkoutFlow');
+  params.delete('cartItems');
+  params.delete('cartTab');
   params.delete('page');
   params.delete('collection');
   params.set('category', slug);
@@ -1102,11 +1411,7 @@ function categoryUrl(slug = 'buku') {
 }
 
 function headerCategoryChildUrl(group, child) {
-  if (group.slug === 'merchandise' && child === 'Bundling') {
-    return categoryUrl('bundling');
-  }
-
-  return categoryUrl(group.slug);
+  return categoryUrl(headerCategoryChildSlug(group, child));
 }
 
 function headerCategoryPanel(group, isActive = false) {
@@ -1163,6 +1468,97 @@ function headerCategoryMenu() {
   `;
 }
 
+function headerShortcutLinks() {
+  return [
+    ['Terlaris', collectionUrl('terlaris'), 'terlaris', '#fff4d8'],
+    ['Terbaru', collectionUrl('terbaru'), 'terbaru', '#f2e8ff'],
+    ['Rekomendasi', collectionUrl('rekomendasi'), 'rekomendasi', '#ffeadc'],
+    ['Bundling', collectionUrl('bundling'), 'bundling', '#dff9f3'],
+    ['Langganan', collectionUrl('langganan'), 'langganan', '#eefcd2'],
+  ];
+}
+
+function allCategoriesShortcutLinks() {
+  return headerShortcutLinks().filter(([, , slug]) => !['bundling', 'langganan'].includes(slug));
+}
+
+function allCategoriesSheet() {
+  if (!isAllCategoriesSheetOpen) {
+    return '';
+  }
+
+  return `
+    <div class="checkout-modal-shell all-categories-sheet-shell" data-all-categories-sheet>
+      <button class="checkout-modal-backdrop" type="button" data-all-categories-close aria-label="Tutup semua kategori"></button>
+      <section class="checkout-modal-panel all-categories-sheet-panel" role="dialog" aria-modal="true" aria-label="Lihat semua kategori">
+        <div class="all-categories-sheet-handle" aria-hidden="true"></div>
+        <div class="checkout-modal-header all-categories-sheet-header">
+          <div>
+            <h2>Semua Kategori</h2>
+          </div>
+          <button type="button" data-all-categories-close aria-label="Tutup">${icon('x', 'h-5 w-5')}</button>
+        </div>
+        <div class="all-categories-sheet-content">
+          <p class="all-categories-sheet-description">Temukan produk Gerai Kompas berdasarkan koleksi pilihan dan kategori.</p>
+          <section class="all-categories-shortcuts" aria-label="Koleksi pilihan">
+            <h3>Koleksi Pilihan</h3>
+            <div>
+              ${allCategoriesShortcutLinks()
+                .map(([label, href, slug, tone]) => {
+                  const collection = collections.find((item) => item.slug === slug) || collections[0];
+                  return `
+                    <a class="all-categories-shortcut" href="${href}" data-all-categories-link>
+                      <span class="all-categories-shortcut-icon" style="--collection-shortcut-bg: ${tone};">
+                        <img src="${collection.heroImage}" alt="" loading="lazy" />
+                      </span>
+                      <span>${label}</span>
+                    </a>
+                  `;
+                })
+                .join('')}
+            </div>
+          </section>
+          <section class="all-categories-menu" aria-label="Kategori produk">
+            <h3>Kategori Produk</h3>
+            <div class="all-categories-menu-list">
+              ${headerCategoryGroups
+                .map((group) => {
+                  const category = categories.find((item) => item.slug === group.slug) || categories[0];
+                  const isOpen = openAllCategoriesGroups.includes(group.slug);
+                  const childLinks = group.children.length
+                    ? [
+                        `<a href="${categoryUrl(group.slug)}" data-all-categories-link>Semua ${group.title}</a>`,
+                        ...group.children.map((child) => `<a href="${categoryUrl(headerCategoryChildSlug(group, child))}" data-all-categories-link>${child}</a>`),
+                      ]
+                        .join('')
+                    : `<a href="${categoryUrl(group.slug)}" data-all-categories-link>Lihat produk ${group.title}</a>`;
+
+                  return `
+                    <article class="all-categories-group ${isOpen ? 'is-open' : ''}">
+                      <button class="all-categories-parent" type="button" data-all-categories-group-toggle="${group.slug}" aria-expanded="${isOpen}">
+                        <span class="all-categories-parent-icon" style="--category-sheet-icon-bg: ${group.tone};">
+                          <img src="${category.thumbnail}" alt="" loading="lazy" />
+                        </span>
+                        <span>
+                          <strong>${group.title}</strong>
+                        </span>
+                        ${icon('chevron-down', `h-4 w-4 ${isOpen ? 'rotate-180' : ''}`)}
+                      </button>
+                      <div class="all-categories-children" ${isOpen ? '' : 'hidden'}>
+                        ${childLinks}
+                      </div>
+                    </article>
+                  `;
+                })
+                .join('')}
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+  `;
+}
+
 function collectionUrl(slug = 'terlaris') {
   const params = new URLSearchParams(window.location.search);
   params.delete('product');
@@ -1215,10 +1611,10 @@ function cartPreview() {
   const items = visibleCartItems();
   const purchaseCount = items.reduce((total, item) => total + cartItemQuantity(item), 0);
   const subscriptionCount = items
-    .filter(isSubscriptionCartItem)
+    .filter(isCartLanggananTabItem)
     .reduce((total, item) => total + cartItemQuantity(item), 0);
   const activeItems = cartPreviewActiveTab === 'langganan'
-    ? items.filter(isSubscriptionCartItem)
+    ? items.filter(isCartLanggananTabItem)
     : items;
   const activeCount = activeItems.reduce((total, item) => total + cartItemQuantity(item), 0);
   const activeTotal = activeItems.reduce((sum, item) => sum + cartItemTotals(item).subtotal, 0);
@@ -1292,7 +1688,7 @@ function cartPreview() {
 
 function selectedCategory() {
   const slug = new URLSearchParams(window.location.search).get('category') || 'buku';
-  return categories.find((category) => category.slug === slug) || categories[0];
+  return allCategoryDefinitions().find((category) => category.slug === slug) || categories[0];
 }
 
 function selectedCollection() {
@@ -1381,6 +1777,16 @@ function badge(label, variant = 'soft-blue', className = '') {
   return `<span class="badge badge-${variant} ${className}">${label}</span>`;
 }
 
+function badgeVariantForLabel(label) {
+  const variants = {
+    Digital: 'soft-blue',
+    Bundling: 'soft-orange',
+    Fisik: 'soft-yellow',
+  };
+
+  return variants[label] || 'soft-blue';
+}
+
 function productBadgeVariant(product) {
   const variants = {
     Buku: 'soft-blue',
@@ -1411,14 +1817,8 @@ function productFormatBadges(product) {
 }
 
 function renderProductBadges(labels) {
-  const variants = {
-    Digital: 'soft-blue',
-    Bundling: 'soft-orange',
-    Fisik: 'soft-yellow',
-  };
-
   return sortProductLabels(labels)
-    .map((label) => badge(label, variants[label] || 'soft-black'))
+    .map((label) => badge(label, badgeVariantForLabel(label)))
     .join('');
 }
 
@@ -1427,9 +1827,10 @@ function sortProductLabels(labels) {
     'Basic (Tabloid Only)': 1,
     'Bundling Plus': 2,
     'Bundling Premium': 3,
-    Bundling: 4,
-    Fisik: 5,
-    Digital: 6,
+    eMagazine: 4,
+    Bundling: 5,
+    Fisik: 6,
+    Digital: 7,
   };
 
   return [...new Set(labels.map(normalizeProductFormatLabel))]
@@ -1440,13 +1841,48 @@ function normalizeProductFormatLabel(label) {
   return label === 'Basic' ? 'Basic (Tabloid Only)' : label;
 }
 
+function productTypeForFormat(product = {}, format = '') {
+  const normalizedFormat = normalizeProductFormatLabel(format);
+  const productTypeMap = product.productTypeByFormat || {};
+  if (productTypeMap[normalizedFormat]) {
+    return productTypeMap[normalizedFormat];
+  }
+
+  if (['Bundling', 'Fisik', 'Digital'].includes(normalizedFormat)) {
+    return normalizedFormat;
+  }
+
+  return normalizeProductFormatLabel(product.productTypeLabel || productFormatBadges(product)[0] || normalizedFormat);
+}
+
+function productPurchaseType(product = {}) {
+  return product.purchaseType || product[PURCHASE_TYPE_FIELD] || (
+    product.category === 'Langganan'
+      ? PURCHASE_TYPES.SUBSCRIPTION
+      : PURCHASE_TYPES.SHOPPING
+  );
+}
+
+function withPurchaseType(product) {
+  if (!product) {
+    return product;
+  }
+
+  const purchaseType = productPurchaseType(product);
+  return {
+    ...product,
+    purchaseType,
+    [PURCHASE_TYPE_FIELD]: purchaseType,
+  };
+}
+
 function expandCategoryProductList(productList, targetCount, slug) {
   if (productList.length >= targetCount) {
-    return productList.slice(0, targetCount);
+    return productList.slice(0, targetCount).map(withPurchaseType);
   }
 
   const editions = ['Pilihan', 'Edisi Baru', 'Favorit Pembaca', 'Rekomendasi Redaksi'];
-  const expandedProducts = [...productList];
+  const expandedProducts = productList.map(withPurchaseType);
   let index = 0;
 
   while (expandedProducts.length < targetCount) {
@@ -1456,7 +1892,7 @@ function expandCategoryProductList(productList, targetCount, slug) {
     const priceAdjustment = (itemNumber % 4) * 5000;
     const originalAdjustment = baseProduct.originalPrice ? (itemNumber % 3) * 7000 : 0;
 
-    expandedProducts.push({
+    expandedProducts.push(withPurchaseType({
       ...baseProduct,
       id: `${baseProduct.id || `category-${slug}`}-item-${itemNumber}`,
       name: `${baseProduct.name} - ${editions[index % editions.length]} ${editionNumber}`,
@@ -1465,7 +1901,7 @@ function expandCategoryProductList(productList, targetCount, slug) {
       sold: String(Math.max(Number.parseInt(String(baseProduct.sold).replace(/\D/g, ''), 10) || 100, 100) + itemNumber * 7),
       stock: Math.max(8, (baseProduct.stock || 20) - (itemNumber % 7)),
       sku: `${baseProduct.sku || `GERAI-${slug.toUpperCase()}`}-${String(itemNumber).padStart(2, '0')}`,
-    });
+    }));
     index += 1;
   }
 
@@ -1739,10 +2175,11 @@ function categoryBookProducts() {
 function buildCategoryProducts(slug, options) {
   return options.names.map((name, index) => {
     const originalPrice = options.originalPrices?.[index % options.originalPrices.length] || null;
-    return {
+    return withPurchaseType({
       id: `category-${slug}-${index + 1}`,
       name,
       category: options.category,
+      purchaseType: options.category === 'Langganan' ? PURCHASE_TYPES.SUBSCRIPTION : PURCHASE_TYPES.SHOPPING,
       price: options.prices[index % options.prices.length],
       originalPrice,
       sold: options.sold[index % options.sold.length],
@@ -1755,12 +2192,33 @@ function buildCategoryProducts(slug, options) {
       description: options.descriptions[index % options.descriptions.length],
       longDescription: options.longDescription,
       details: options.details,
-    };
+    });
   });
 }
 
 function categoryProducts(slug = 'buku') {
-  if (slug === 'buku') {
+  const categoryDefinition = allCategoryDefinitions().find((category) => category.slug === slug);
+  const sourceSlug = categoryDefinition?.parentSlug || slug;
+
+  if (sourceSlug === 'semua-kategori') {
+    return expandCategoryProductList(
+      uniqueProductList([
+        ...categoryProducts('buku').slice(0, 15),
+        ...categoryProducts('merchandise').slice(0, 12),
+        ...categoryProducts('langganan').slice(0, 12),
+        ...categoryProducts('bundling').slice(0, 12),
+        ...categoryProducts('tiket').slice(0, 8),
+      ]),
+      75,
+      'semua-kategori',
+    );
+  }
+
+  if (sourceSlug === 'produk-mitra') {
+    return [];
+  }
+
+  if (sourceSlug === 'buku') {
     return categoryBookProducts();
   }
 
@@ -1952,12 +2410,12 @@ function categoryProducts(slug = 'buku') {
     },
   };
 
-  const template = templates[slug] || templates.bundling;
+  const template = templates[sourceSlug] || templates.bundling;
   return expandCategoryProductList(buildCategoryProducts(slug, template), 75, slug);
 }
 
 function pickProducts(productIds) {
-  return productIds.map((productId) => products.find((product) => product.id === productId)).filter(Boolean);
+  return productIds.map((productId) => baseProductById(productId)).filter(Boolean);
 }
 
 function catalogProducts() {
@@ -1974,7 +2432,7 @@ function catalogProducts() {
   const unique = new Map();
   catalog.forEach((product) => {
     if (!unique.has(product.id)) {
-      unique.set(product.id, product);
+      unique.set(product.id, withPurchaseType(product));
     }
   });
   return [...unique.values()];
@@ -1989,14 +2447,22 @@ function ensureWishlistSeed() {
     return;
   }
 
-  const seedProducts = [
+  const homepageProductIds = new Set([
     ...bestSellerProducts(),
     ...homepageLatestProducts(),
-    ...categoryProducts('buku').slice(0, 8),
-    ...categoryProducts('langganan').slice(0, 6),
-    ...categoryProducts('merchandise').slice(0, 6),
-    ...categoryProducts('tiket').slice(0, 4),
-  ];
+    ...bundlingProducts(),
+    baseProductById('source-17'),
+    baseProductById('source-19'),
+    baseProductById('source-20'),
+    baseProductById('source-21'),
+    ...categoryProducts('langganan'),
+  ].filter(Boolean).map((product) => product.id));
+  const seedProducts = [
+    ...categoryProducts('buku'),
+    ...categoryProducts('merchandise'),
+    ...categoryProducts('tiket'),
+    ...categoryProducts('produk-mitra'),
+  ].filter((product) => product && !homepageProductIds.has(product.id));
   const uniqueProducts = [];
   const seen = new Set();
   seedProducts.forEach((product) => {
@@ -2028,6 +2494,14 @@ function completeAuthentication() {
     wishlist.add(pendingWishlistProductId);
     wishlistSavedAt.set(pendingWishlistProductId, Date.now());
     pendingWishlistProductId = null;
+  }
+  if (pendingAddressManagerOpen) {
+    isAddressManagerOpen = true;
+    addressFormMode = 'list';
+    editingAddressId = null;
+    addressDraft = null;
+    openAddressMenuId = null;
+    pendingAddressManagerOpen = false;
   }
   const redirectAfterAuth = pendingAuthRedirect;
   pendingAuthRedirect = '';
@@ -2071,6 +2545,12 @@ function getSelectedProduct() {
 }
 
 function productGalleryImages(product) {
+  const singleImageGalleryProductIds = new Set(['source-17', 'source-19', 'source-20', 'source-21']);
+
+  if (singleImageGalleryProductIds.has(product.id)) {
+    return [product.image];
+  }
+
   if (product.galleryImages?.length) {
     const galleryImages = [product.image, ...product.galleryImages]
       .filter(Boolean)
@@ -2123,6 +2603,45 @@ function resolveDistrictMeta(district = '') {
   return districtMap[normalized] || (normalized ? { city: 'Jakarta Pusat', province: 'DKI Jakarta' } : { city: '', province: '' });
 }
 
+const addressRegionOptions = {
+  'DKI Jakarta': {
+    'Jakarta Barat': ['Palmerah', 'Grogol Petamburan', 'Kebon Jeruk', 'Kembangan'],
+    'Jakarta Pusat': ['Gambir', 'Menteng', 'Tanah Abang', 'Senen'],
+    'Jakarta Selatan': ['Kebayoran Baru', 'Mampang Prapatan', 'Setiabudi', 'Tebet'],
+    'Jakarta Timur': ['Cakung', 'Jatinegara', 'Matraman', 'Pulogadung'],
+    'Jakarta Utara': ['Kelapa Gading', 'Koja', 'Pademangan', 'Tanjung Priok'],
+  },
+  'Jawa Barat': {
+    'Kota Bandung': ['Coblong', 'Sukajadi', 'Sumur Bandung', 'Lengkong'],
+    'Kota Depok': ['Beji', 'Cimanggis', 'Pancoran Mas', 'Sukmajaya'],
+    'Kota Bekasi': ['Bekasi Barat', 'Bekasi Selatan', 'Bekasi Timur', 'Medan Satria'],
+  },
+  Banten: {
+    'Kota Tangerang': ['Ciledug', 'Karawaci', 'Pinang', 'Tangerang'],
+    'Kota Tangerang Selatan': ['Ciputat', 'Pamulang', 'Pondok Aren', 'Serpong'],
+  },
+};
+
+function addressProvinceOptions() {
+  return Object.keys(addressRegionOptions);
+}
+
+function addressCityOptions(province = '') {
+  return Object.keys(addressRegionOptions[province] || {});
+}
+
+function addressDistrictOptions(province = '', city = '') {
+  return addressRegionOptions[province]?.[city] || [];
+}
+
+function addressSelectOptions(options, selectedValue = '', placeholder = 'Pilih') {
+  const values = selectedValue && !options.includes(selectedValue) ? [selectedValue, ...options] : options;
+  return `
+    <option value="" ${selectedValue ? '' : 'selected'} disabled>${placeholder}</option>
+    ${values.map((value) => `<option value="${value}" ${value === selectedValue ? 'selected' : ''}>${value}</option>`).join('')}
+  `;
+}
+
 function formatAddressLine(address) {
   if (!address) {
     return '';
@@ -2133,6 +2652,50 @@ function formatAddressLine(address) {
 
 function getAppliedPromo() {
   return appliedPromoCode ? promoCatalog[appliedPromoCode] : null;
+}
+
+function promoDiscountAmount(promo, total) {
+  if (!promo) {
+    return 0;
+  }
+
+  if (promo.rate) {
+    const rateDiscount = Math.round(total * promo.rate);
+    return Math.min(rateDiscount, promo.maxValue || rateDiscount, total);
+  }
+
+  return Math.min(promo.value || 0, total);
+}
+
+function checkoutHasDigitalSubscription(items = checkoutOrderItems()) {
+  return items.some((item) => {
+    const product = cartItemProduct(item);
+    return product.category === 'Langganan' && item.type === 'Digital';
+  });
+}
+
+function syncAutoRenewPromo(items = checkoutOrderItems(), options = {}) {
+  const autoPromoCode = 'AUTORENEW10';
+  const shouldApplyAutoPromo = selectedPaymentPlan === 'recurring' && checkoutHasDigitalSubscription(items);
+  const isAutoPromoActive = appliedPromoCode === autoPromoCode;
+
+  if (shouldApplyAutoPromo && !isAutoPromoActive) {
+    appliedPromoCode = autoPromoCode;
+    promoError = '';
+    if (options.notify) {
+      autoPromoSnackbar = 'Promo perpanjang otomatis berhasil diterapkan.';
+      autoPromoSnackbarType = 'success';
+    }
+    return;
+  }
+
+  if (!shouldApplyAutoPromo && isAutoPromoActive) {
+    appliedPromoCode = '';
+    if (options.notify) {
+      autoPromoSnackbar = 'Promo perpanjang otomatis dibatalkan karena tidak memenuhi syarat.';
+      autoPromoSnackbarType = 'info';
+    }
+  }
 }
 
 function productFormatOptions(product) {
@@ -2364,6 +2927,20 @@ function productTypeSummaryMarkup(product) {
   return `<p class="pdp-option-label">Jenis Produk: <span>${product.productTypeLabel}</span></p>`;
 }
 
+function pdpSelectedProductTypeMarkup(product, format = selectedProductFormat) {
+  if (product.id !== 'source-18') {
+    return '';
+  }
+
+  const productType = productTypeForFormat(product, format);
+  return `
+    <p class="pdp-option-label pdp-selected-product-type">
+      <strong>Jenis Produk:</strong>
+      ${badge(productType, badgeVariantForLabel(productType), 'checkout-format-badge')}
+    </p>
+  `;
+}
+
 function productOptionLabel(product) {
   return product.optionLabel || 'Jenis Produk';
 }
@@ -2398,6 +2975,14 @@ function productShippingDescription(product, type = selectedProductFormat) {
 }
 
 function productServiceSummary(product, type = selectedProductFormat) {
+  if (product.id === 'source-20') {
+    return 'Koran dikirim dan akses digital via email';
+  }
+
+  if (product.id === 'source-21') {
+    return 'Akses profesional via email';
+  }
+
   if (product.id === 'source-17') {
     return 'Akses digital premium Kompas.id';
   }
@@ -2431,20 +3016,31 @@ function productMetaLabel(product) {
 }
 
 function baseProductById(productId) {
-  return products.find((product) => product.id === productId);
+  return withPurchaseType(products.find((product) => product.id === productId));
 }
 
 function uniqueProductList(productList) {
   return productList
     .filter(Boolean)
+    .map(withPurchaseType)
     .filter((product, index, list) => list.findIndex((item) => item.id === product.id) === index);
 }
 
 function latestProducts() {
+  const homepageBundlingProducts = categoryProducts('bundling')
+    .slice(0, 4)
+    .map((product) => (
+      product.name === 'Bundling Buku Kebangsaan dan Kompas.id'
+        ? baseProductById('source-7')
+        : product
+    ));
+
   return uniqueProductList([
     baseProductById('source-17'),
+    baseProductById('source-20'),
+    baseProductById('source-21'),
     baseProductById('source-18'),
-    ...categoryProducts('bundling').slice(0, 4),
+    ...homepageBundlingProducts,
     ...categoryProducts('buku').slice(0, 8),
     ...categoryProducts('merchandise').slice(0, 4),
     ...categoryProducts('langganan').slice(0, 4),
@@ -2470,7 +3066,7 @@ function bestSellerProducts() {
   const subscriptions = categoryProducts('langganan');
   return uniqueProductList([
     baseProductById('source-18'),
-    books.find((product) => product.id === 'book-tts-28') || books[0],
+    baseProductById('source-2'),
     bundling[0],
     merch[0],
     subscriptions[0],
@@ -2496,6 +3092,19 @@ function collectionProducts(slug = 'terlaris') {
       baseProductById('source-19'),
       ...categoryProducts('langganan'),
     ]);
+  }
+
+  if (slug === 'rekomendasi') {
+    return expandCategoryProductList(
+      uniqueProductList([
+        ...bestSellerProducts(),
+        ...latestProducts(),
+        ...categoryProducts('buku').slice(0, 6),
+        ...categoryProducts('merchandise').slice(0, 4),
+      ]),
+      75,
+      'rekomendasi',
+    );
   }
 
   return expandCategoryProductList(bestSellerProducts(), 75, 'terlaris');
@@ -2538,6 +3147,8 @@ function icon(name, className = 'h-5 w-5') {
     shield:
       '<path d="M12 3 20 6v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z"></path><path d="m9 12 2 2 4-5"></path>',
     check: '<path d="m5 12 4 4L19 6"></path>',
+    info:
+      '<circle cx="12" cy="12" r="9"></circle><path d="M12 10v6"></path><path d="M12 7.5h.01"></path>',
     star: '<path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9z"></path>',
     tag: '<path d="M20 12v7a2 2 0 0 1-2 2h-7L3 13V5a2 2 0 0 1 2-2h8z"></path><circle cx="8" cy="8" r="1.5"></circle>',
     edit:
@@ -2564,6 +3175,8 @@ function icon(name, className = 'h-5 w-5') {
       '<path d="M6 3h12v18l-2-1.2-2 1.2-2-1.2-2 1.2-2-1.2L6 21z"></path><path d="M9 8h6"></path><path d="M9 12h6"></path><path d="M9 16h4"></path>',
     'log-out':
       '<path d="M10 17l5-5-5-5"></path><path d="M15 12H3"></path><path d="M21 3v18"></path>',
+    'map-pin':
+      '<path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle>',
     plus: '<path d="M12 5v14"></path><path d="M5 12h14"></path>',
     minus: '<path d="M5 12h14"></path>',
     chevron: '<path d="m9 18 6-6-6-6"></path>',
@@ -2575,6 +3188,14 @@ function icon(name, className = 'h-5 w-5') {
 
 function header(active = 'home') {
   const cartCount = visibleCartItems().reduce((total, item) => total + cartItemQuantity(item), 0);
+  const selectedAddress = getSelectedAddress();
+  const headerAddressLabel = selectedAddress
+    ? `${selectedAddress.label} · ${selectedAddress.district || selectedAddress.city || selectedAddress.province}`
+    : 'Pilih alamat pengiriman';
+  const headerAddressIsEmpty = !isAuthenticated;
+  const headerAddressEyebrow = 'Dikirim ke';
+  const headerAddressText = headerAddressIsEmpty ? 'Pilih Alamat' : headerAddressLabel;
+  const shortcutLinks = headerShortcutLinks();
   const accountButton = isAuthenticated
     ? `<div class="header-account-menu auth-action">
         <button class="header-account-chip" type="button" aria-label="Akun Reza" aria-haspopup="true">
@@ -2603,6 +3224,25 @@ function header(active = 'home') {
     : `<button class="icon-btn inline-flex h-11 w-11 items-center justify-center rounded-lg border border-transparent text-kompas-royal lg:hidden" data-account-menu-toggle aria-expanded="false" aria-label="Buka menu akun">
         ${icon('user')}
       </button>`;
+  const shortcutBar =
+    active === 'home'
+      ? `<div class="header-shortcuts" aria-label="Navigasi cepat">
+          <div class="kompas-container header-shortcuts-inner">
+            <nav class="header-shortcut-links" aria-label="Produk pilihan">
+              ${shortcutLinks.map(([label, href]) => `<a href="${href}">${label}</a>`).join('')}
+            </nav>
+            <button class="header-address-trigger" type="button" data-address-manager-open>
+              ${icon('map-pin', 'h-4 w-4')}
+              <span>
+                <small>${headerAddressEyebrow}</small>
+                <strong>${headerAddressText}</strong>
+              </span>
+              ${icon('chevron-down', 'header-address-chevron h-4 w-4')}
+            </button>
+          </div>
+        </div>`
+      : '';
+  const siteHeaderBorderClass = active === 'home' ? '' : 'border-b border-[#EEEEEE]';
 
   if (active === 'checkout') {
     return `
@@ -2617,7 +3257,7 @@ function header(active = 'home') {
   }
 
   return `
-    <header class="sticky top-0 z-40 border-b border-[#EEEEEE] bg-white/95 backdrop-blur" data-site-header>
+    <header class="sticky top-0 z-40 ${siteHeaderBorderClass} bg-white/95 backdrop-blur" data-site-header>
       <div class="kompas-container header-main">
         <div class="header-left">
           <a href="${homeUrl()}" class="flex shrink-0 items-center gap-3" aria-label="Gerai Kompas.id">
@@ -2657,6 +3297,8 @@ function header(active = 'home') {
           ${mobileAccountButton}
         </div>
       </div>
+    </header>
+    ${shortcutBar}
       <div class="mobile-overlay" data-mobile-search hidden>
         <div class="mobile-overlay-backdrop" data-mobile-overlay-close></div>
         <div class="mobile-search-panel" role="dialog" aria-label="Pencarian produk">
@@ -2693,7 +3335,6 @@ function header(active = 'home') {
           </nav>
         </div>
       </div>
-    </header>
   `;
 }
 
@@ -2949,6 +3590,7 @@ function purchaseBottomSheet(product, formats, pricing, subtotal) {
   }
 
   const isCartMode = purchaseSheetMode === 'cart';
+  const isLockedSubscription = isLockedSubscriptionProduct(product);
   return `
     <div class="purchase-sheet-shell ${shouldAnimatePurchaseSheet ? 'is-entering' : ''}" data-purchase-sheet>
       <button class="purchase-sheet-backdrop" type="button" data-purchase-sheet-close aria-label="Tutup pilihan pembelian"></button>
@@ -2967,6 +3609,9 @@ function purchaseBottomSheet(product, formats, pricing, subtotal) {
           </div>
         </div>
         <div class="purchase-sheet-section">
+          <div class="purchase-sheet-label">
+            <p class="pdp-option-label"><strong>${productOptionLabel(product)}:</strong> <span>${selectedProductFormat}</span></p>
+          </div>
           <div class="pdp-options" role="group" aria-label="Pilih jenis produk">
             ${formats
               .map(
@@ -2998,17 +3643,30 @@ function purchaseBottomSheet(product, formats, pricing, subtotal) {
         <div class="purchase-sheet-section">
           <div class="purchase-sheet-label">
             <span>Jumlah</span>
-            <small>Stok ${product.stock}</small>
+            ${isLockedSubscription ? '' : `<small>Stok ${product.stock}</small>`}
           </div>
-          <div class="pdp-quantity">
-            <button type="button" data-qty="minus" aria-label="Kurangi">${icon('minus', 'h-4 w-4')}</button>
-            <span>${quantity}</span>
-            <button type="button" data-qty="plus" aria-label="Tambah">${icon('plus', 'h-4 w-4')}</button>
-          </div>
+          ${
+            isLockedSubscription
+              ? `<div class="pdp-quantity">
+                  <button type="button" data-qty="minus" aria-label="Kurangi">${icon('minus', 'h-4 w-4')}</button>
+                  <span>1</span>
+                  <button type="button" data-qty="plus" aria-label="Tambah" disabled>${icon('plus', 'h-4 w-4')}</button>
+                </div>`
+              : `<div class="pdp-quantity">
+                  <button type="button" data-qty="minus" aria-label="Kurangi">${icon('minus', 'h-4 w-4')}</button>
+                  <span>${quantity}</span>
+                  <button type="button" data-qty="plus" aria-label="Tambah">${icon('plus', 'h-4 w-4')}</button>
+                </div>`
+          }
+          ${
+            isLockedSubscription
+              ? '<p class="pdp-quantity-note">Produk langganan hanya dapat dibeli adalah 1 per transaksi.</p>'
+              : ''
+          }
         </div>
         <div class="purchase-sheet-actions">
           ${
-            isCartMode
+            isCartMode && !isLockedSubscription
               ? `<button class="btn btn-primary w-full purchase-sheet-add" type="button" data-add-to-cart data-purchase-sheet-add>${icon('cart-plus', 'h-5 w-5')} <span>Tambah ke Keranjang</span></button>`
               : `<a class="btn btn-primary w-full" href="${routeUrl('checkout', product.id, selectedProductFormat, selectedProductFormats)}" data-buy-now-trigger>Beli Sekarang</a>`
           }
@@ -3361,9 +4019,10 @@ function homeLatestLoadMoreControl(totalCount) {
 function categoryPage() {
   const category = selectedCategory();
   const productsForCategory = categoryProducts(category.slug);
+  const isEmptyCategory = productsForCategory.length === 0;
   const isMobileCategoryView = window.matchMedia('(max-width: 640px)').matches;
   const categoryPageSize = CATEGORY_PAGE_SIZE;
-  const categoryTotalPages = Math.ceil(productsForCategory.length / categoryPageSize);
+  const categoryTotalPages = Math.max(1, Math.ceil(productsForCategory.length / categoryPageSize));
   const currentCategoryPage = selectedCategoryPage(categoryTotalPages);
   const mobileVisibleCount = Math.min(
     categoryMobileVisibleCounts[category.slug] || categoryPageSize,
@@ -3375,9 +4034,11 @@ function categoryPage() {
   const categoryProductsMarkup = visibleCategoryProducts
     .map((product, index) => productCard(product, index > 7, category.labels))
     .join('');
-  const categoryActionMarkup = isMobileCategoryView
-    ? categoryLoadMoreControl(category, mobileVisibleCount, productsForCategory.length)
-    : categoryPagination(category, currentCategoryPage, categoryTotalPages);
+  const categoryActionMarkup = isEmptyCategory
+    ? ''
+    : isMobileCategoryView
+      ? categoryLoadMoreControl(category, mobileVisibleCount, productsForCategory.length)
+      : categoryPagination(category, currentCategoryPage, categoryTotalPages);
 
   return `
     ${header('category')}
@@ -3402,13 +4063,27 @@ function categoryPage() {
           <h2>Semua ${category.name}</h2>
           <span class="category-result-count">${productsForCategory.length} produk</span>
         </div>
-        <div class="category-product-grid">${categoryProductsMarkup}</div>
+        ${
+          isEmptyCategory
+            ? categoryEmptyState(category)
+            : `<div class="category-product-grid">${categoryProductsMarkup}</div>`
+        }
         <div class="category-more-action">
           ${categoryActionMarkup}
         </div>
       </section>
     </main>
     ${footer()}
+  `;
+}
+
+function categoryEmptyState(category) {
+  return `
+    <div class="category-empty-state">
+      <img src="./assets/product-unavailable-cropped.png" alt="" />
+      <h2>Produk Belum Tersedia</h2>
+      <p>Produk untuk kategori ${category.name} sedang kami siapkan. Silakan cek kembali beberapa waktu lagi.</p>
+    </div>
   `;
 }
 
@@ -3682,13 +4357,13 @@ function cartPage() {
   const allCartVisibleItems = visibleCartItems();
   const purchaseCount = allCartVisibleItems.reduce((total, item) => total + cartItemQuantity(item), 0);
   const subscriptionCount = allCartVisibleItems
-    .filter(isSubscriptionCartItem)
+    .filter(isCartLanggananTabItem)
     .reduce((total, item) => total + cartItemQuantity(item), 0);
   const cartVisibleItems = activeCartTabItems();
   const visibleSelectedItems = activeCartTabSelectedItems();
   const cartTotals = cartSummaryTotals(visibleSelectedItems);
   const appliedPromo = getAppliedPromo();
-  const promoDiscount = appliedPromo ? Math.min(appliedPromo.value, cartTotals.subtotal) : 0;
+  const promoDiscount = promoDiscountAmount(appliedPromo, cartTotals.subtotal);
   const totalDiscount = cartTotals.discount + promoDiscount;
   const totalDue = cartTotals.subtotal - promoDiscount;
   const hasSelectedItems = visibleSelectedItems.length > 0;
@@ -3725,7 +4400,7 @@ function cartPage() {
             <a href="${productHref}">
               <h2>${itemProduct.name}</h2>
             </a>
-            <div class="cart-item-type">${badge(item.type, 'soft-blue', 'checkout-format-badge')}</div>
+            <div class="cart-item-type">${cartItemVariantBadges(item, { includeProductType: true })}</div>
             <div class="cart-item-price">
               <strong>${formatCurrency(pricing.price)}</strong>
               ${pricing.originalPrice ? `<span>${formatCurrency(pricing.originalPrice)}</span>` : ''}
@@ -3752,6 +4427,7 @@ function cartPage() {
     ${header('cart')}
     <main class="cart-page kompas-container py-6">
       <h1>Keranjang</h1>
+      <p class="cart-page-instruction">Pilih keranjang Belanja atau Langganan sesuai produk yang ingin Anda beli.</p>
       <div class="cart-layout">
         <div class="cart-main">
           <div class="cart-page-tabs" role="tablist" aria-label="Jenis keranjang">
@@ -3910,6 +4586,8 @@ function homePage() {
     .join('');
   const subscriptions = uniqueProductList([
     baseProductById('source-17'),
+    baseProductById('source-20'),
+    baseProductById('source-21'),
     baseProductById('source-19'),
     ...categoryProducts('langganan'),
   ]).slice(0, 4)
@@ -3928,6 +4606,14 @@ function homePage() {
         'Kategori Pilihan',
         '',
         `<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <button class="category-card category-card-all flex items-center gap-4 rounded-lg p-4 text-left" type="button" data-all-categories-open>
+            <span class="category-card-media category-card-media-all" aria-hidden="true">
+              <img src="./assets/all-categories.png" alt="" loading="lazy" />
+            </span>
+            <span>
+              <span class="block font-bold">Lihat Semua</span>
+            </span>
+          </button>
           ${categories
             .filter((category) => !category.isHiddenFromPopular)
             .map(
@@ -3981,6 +4667,7 @@ function homePage() {
         collectionUrl('terbaru'),
       )}
     </main>
+    ${allCategoriesSheet()}
     ${footer()}
   `;
 }
@@ -3991,6 +4678,10 @@ function productPage() {
   const productCategory = categoryForProduct(product);
   const isWishlisted = wishlist.has(product.id);
   const pricing = productVariantPricing(product, selectedProductFormat);
+  const isLockedSubscription = isLockedSubscriptionProduct(product);
+  if (isLockedSubscription && quantity !== 1) {
+    quantity = 1;
+  }
   const subtotal = pricing.price * quantity;
   const discount = pricing.originalPrice ? Math.round((1 - pricing.price / pricing.originalPrice) * 100) : null;
   const galleryImages = productGalleryImages(product);
@@ -4070,6 +4761,7 @@ function productPage() {
                 )
                 .join('')}
             </div>
+            ${pdpSelectedProductTypeMarkup(product, selectedProductFormat)}
           </div>
           ${
             product.periods?.length
@@ -4115,13 +4807,26 @@ function productPage() {
           <div class="pdp-option-group">
             <p>Jumlah</p>
             <div class="pdp-quantity-row">
-              <div class="pdp-quantity">
-                <button type="button" data-qty="minus" aria-label="Kurangi">${icon('minus', 'h-4 w-4')}</button>
-                <span>${quantity}</span>
-                <button type="button" data-qty="plus" aria-label="Tambah">${icon('plus', 'h-4 w-4')}</button>
-              </div>
-              <span>Stok ${product.stock}</span>
+              ${
+                isLockedSubscription
+                  ? `<div class="pdp-quantity">
+                      <button type="button" data-qty="minus" aria-label="Kurangi">${icon('minus', 'h-4 w-4')}</button>
+                      <span>1</span>
+                      <button type="button" data-qty="plus" aria-label="Tambah" disabled>${icon('plus', 'h-4 w-4')}</button>
+                    </div>`
+                  : `<div class="pdp-quantity">
+                      <button type="button" data-qty="minus" aria-label="Kurangi">${icon('minus', 'h-4 w-4')}</button>
+                      <span>${quantity}</span>
+                      <button type="button" data-qty="plus" aria-label="Tambah">${icon('plus', 'h-4 w-4')}</button>
+                    </div>
+                    <span>Stok ${product.stock}</span>`
+              }
             </div>
+            ${
+              isLockedSubscription
+                ? '<p class="pdp-quantity-note">Produk langganan hanya dapat dibeli adalah 1 per transaksi.</p>'
+                : ''
+            }
           </div>
 
           <div class="pdp-subtotal">
@@ -4129,9 +4834,13 @@ function productPage() {
             <strong>${formatCurrency(subtotal)}</strong>
           </div>
 
-          <div class="pdp-actions">
+          <div class="pdp-actions ${isLockedSubscription ? 'is-single-action' : ''}">
             <a class="btn btn-primary" href="${routeUrl('checkout', product.id, selectedProductFormat, selectedProductFormats)}" data-buy-now-trigger>Beli Sekarang</a>
-            <button class="btn btn-secondary pdp-cart-action" type="button" data-add-to-cart>${icon('cart-plus')} <span>Tambah ke Keranjang</span></button>
+            ${
+              isLockedSubscription
+                ? ''
+                : `<button class="btn btn-secondary pdp-cart-action" type="button" data-add-to-cart>${icon('cart-plus')} <span>Tambah ke Keranjang</span></button>`
+            }
           </div>
 
           <ul class="pdp-service-list">
@@ -4233,38 +4942,37 @@ function checkoutPage() {
   normalizeSelectedFormat(product);
   const checkoutItems = checkoutOrderItems();
   const cartCheckoutTab = checkoutCartSourceTab(checkoutItems);
-  const lockedPaymentPlan = cartCheckoutTab === 'langganan'
-    ? 'recurring'
-    : cartCheckoutTab === 'belanja'
-      ? 'once'
-      : null;
-  if (lockedPaymentPlan && selectedPaymentPlan !== lockedPaymentPlan) {
-    selectedPaymentPlan = lockedPaymentPlan;
+  const paymentPlanConstraint = checkoutPaymentPlanConstraint(checkoutItems);
+  const isPaymentPlanSelectable = !paymentPlanConstraint.plan;
+  if (paymentPlanConstraint.plan && selectedPaymentPlan !== paymentPlanConstraint.plan) {
+    selectedPaymentPlan = paymentPlanConstraint.plan;
     isPaymentTermsExpanded = false;
   }
+  syncAutoRenewPromo(checkoutItems);
   const selectedAddress = getSelectedAddress();
   const appliedPromo = getAppliedPromo();
   const needsShipping = checkoutNeedsShipping(checkoutItems);
+  const needsStoreNote = checkoutNeedsStoreNote(checkoutItems);
   const shipping = needsShipping ? selectedShippingOption().price : 0;
   const insurance = needsShipping ? 3000 : 0;
   const subtotal = checkoutItems.reduce((total, item) => total + cartItemTotals(item).subtotal, 0);
   const grossTotal = subtotal + shipping + insurance;
-  const discount = appliedPromo ? Math.min(appliedPromo.value, grossTotal) : 0;
+  const discount = promoDiscountAmount(appliedPromo, grossTotal);
   const total = grossTotal - discount;
   const checkoutProductsMarkup = checkoutItems
     .map((item) => {
       const { product: itemProduct, pricing } = cartItemTotals(item);
       const isSingleCheckout = item.isSingleCheckout;
-      const isLockedSubscriptionQuantity = !isSingleCheckout && (cartCheckoutTab === 'langganan' || isSubscriptionCartItem(item));
-      const quantityControl = isSingleCheckout
-        ? `<div class="pdp-quantity checkout-quantity">
+      const isLockedSubscriptionQuantity = cartCheckoutTab === 'langganan' || isSubscriptionCartItem(item);
+      const quantityControl = isLockedSubscriptionQuantity
+        ? '<div class="checkout-quantity-text">Jumlah: 1</div>'
+        : isSingleCheckout
+          ? `<div class="pdp-quantity checkout-quantity">
             <button type="button" data-qty="minus" aria-label="Kurangi">${icon('minus', 'h-4 w-4')}</button>
             <span>${item.quantity}</span>
             <button type="button" data-qty="plus" aria-label="Tambah">${icon('plus', 'h-4 w-4')}</button>
           </div>`
-        : isLockedSubscriptionQuantity
-          ? '<div class="checkout-quantity-text">Jumlah: 1</div>'
-        : `<div class="pdp-quantity checkout-quantity">
+          : `<div class="pdp-quantity checkout-quantity">
             <button type="button" data-checkout-cart-qty="${item.cartId}" data-cart-qty-action="minus" aria-label="Kurangi">${icon('minus', 'h-4 w-4')}</button>
             <span>${item.quantity}</span>
             <button type="button" data-checkout-cart-qty="${item.cartId}" data-cart-qty-action="plus" aria-label="Tambah">${icon('plus', 'h-4 w-4')}</button>
@@ -4276,9 +4984,7 @@ function checkoutPage() {
             <img src="${itemProduct.image}" alt="${itemProduct.name}" />
             <div>
               <h3>${itemProduct.name}</h3>
-              <div class="checkout-product-variant">
-                ${badge(item.period || item.type, 'soft-blue', 'checkout-format-badge')}
-              </div>
+              <div class="checkout-product-variant">${cartItemVariantBadges(item, { includeProductType: true })}</div>
               <div class="checkout-product-meta">
                 <strong>${formatCurrency(pricing.price)}</strong>
                 ${pricing.originalPrice ? `<span class="checkout-product-original-price">${formatCurrency(pricing.originalPrice)}</span>` : ''}
@@ -4305,8 +5011,12 @@ function checkoutPage() {
     selectedPaymentMethod = activePaymentMethods[0].id;
   }
   const paymentPlanLabel = selectedPaymentPlan === 'once' ? 'Sekali Bayar' : 'Perpanjang Otomatis';
-  const isCartBelanjaCheckout = cartCheckoutTab === 'belanja';
-  const isCartLanggananCheckout = cartCheckoutTab === 'langganan';
+  const hasAutoRenewPromo = checkoutHasDigitalSubscription(checkoutItems);
+  const isShoppingBundlingRecurringCheckout = selectedPaymentPlan === 'recurring'
+    && checkoutItems.some((item) => {
+      const itemProduct = cartItemProduct(item);
+      return productPurchaseType(itemProduct) === PURCHASE_TYPES.SHOPPING && cartItemProductType(item) === 'Bundling';
+    });
   const paymentTerms =
     selectedPaymentPlan === 'once'
       ? {
@@ -4318,10 +5028,12 @@ function checkoutPage() {
         }
       : {
           title: 'Ketentuan Perpanjang Otomatis',
-          short:
-            'Tagihan berikutnya diproses otomatis sesuai metode pembayaran tersimpan.',
-          full:
-            'Dengan memilih perpanjang otomatis, Anda menyetujui bahwa tagihan periode berikutnya dapat diproses otomatis menggunakan metode pembayaran yang tersimpan. Anda dapat menghentikan perpanjangan otomatis melalui menu kelola akun Kompas.id atau layanan pelanggan sebelum tanggal penagihan berikutnya.',
+          short: isShoppingBundlingRecurringCheckout
+            ? 'Perpanjang otomatis hanya berlaku untuk produk langganan digital. Pembayaran selanjutnya <strong>Rp120.000/1 tahun</strong>'
+            : 'Tagihan berikutnya diproses otomatis sesuai metode pembayaran tersimpan.',
+          full: isShoppingBundlingRecurringCheckout
+            ? 'Perpanjang otomatis pada pesanan ini hanya berlaku untuk akses langganan digital yang termasuk di dalam paket bundling. Produk fisik dalam paket tetap dibayar satu kali pada transaksi ini. Pembayaran selanjutnya sebesar <strong>Rp120.000/1 tahun</strong> akan diproses otomatis menggunakan metode pembayaran tersimpan sampai Anda menghentikan perpanjangan melalui menu kelola akun Kompas.id atau layanan pelanggan.'
+            : 'Dengan memilih perpanjang otomatis, Anda menyetujui bahwa tagihan periode berikutnya dapat diproses otomatis menggunakan metode pembayaran yang tersimpan. Anda dapat menghentikan perpanjangan otomatis melalui menu kelola akun Kompas.id atau layanan pelanggan sebelum tanggal penagihan berikutnya.',
         };
   const visiblePaymentTerms = isPaymentTermsExpanded ? paymentTerms.full : paymentTerms.short;
   return `
@@ -4335,28 +5047,32 @@ function checkoutPage() {
       </div>
       <div class="checkout-grid">
         <div class="checkout-main">
-          <section class="checkout-card">
-            <div class="checkout-card-title">
-              <h2 class="checkout-title-label">${icon('truck', 'h-5 w-5')} Alamat Pengiriman</h2>
-              <button type="button" data-address-manager-open>Ubah</button>
-            </div>
-            ${
-              selectedAddress
-                ? `<div class="checkout-address">
-                    <div>
-                      <p>${selectedAddress.recipient} <span class="checkout-address-label">${selectedAddress.label}</span></p>
-                      <span>${formatAddressLine(selectedAddress)} · ${selectedAddress.phone}</span>
-                    </div>
-                  </div>`
-                : `<button class="checkout-address checkout-address-empty" type="button" data-address-empty-add>
-                    <div>
-                      <p>Belum Ada Alamat Pengiriman</p>
-                      <span>Tambahkan alamat agar produk fisik dapat diproses setelah pembayaran terverifikasi.</span>
-                    </div>
-                    ${icon('chevron', 'h-4 w-4')}
-                  </button>`
-            }
-          </section>
+          ${
+            needsShipping
+              ? `<section class="checkout-card">
+                  <div class="checkout-card-title">
+                    <h2 class="checkout-title-label">${icon('truck', 'h-5 w-5')} Alamat Pengiriman</h2>
+                  </div>
+                  ${
+                    selectedAddress
+                      ? `<div class="checkout-address">
+                          <div>
+                            <p>${selectedAddress.recipient} <span class="checkout-address-label">${selectedAddress.label}</span></p>
+                            <span>${formatAddressLine(selectedAddress)} · ${selectedAddress.phone}</span>
+                          </div>
+                          <button class="checkout-address-action" type="button" data-address-manager-open>Ganti</button>
+                        </div>`
+                      : `<button class="checkout-address checkout-address-empty" type="button" data-address-empty-add>
+                          <div>
+                            <p>Belum Ada Alamat Pengiriman</p>
+                            <span>Tambahkan alamat agar produk fisik dapat diproses setelah pembayaran terverifikasi.</span>
+                          </div>
+                          ${icon('chevron', 'h-4 w-4')}
+                        </button>`
+                  }
+                </section>`
+              : ''
+          }
 
           <section class="checkout-card">
             <div class="checkout-store-row">
@@ -4368,10 +5084,14 @@ function checkoutPage() {
             <div class="checkout-product-list">
               ${checkoutProductsMarkup}
             </div>
-            <label class="checkout-note">
-              <span>Catatan untuk Gerai</span>
-              <input type="text" placeholder="Contoh: jangan sertakan invoice harga" />
-            </label>
+            ${
+              needsStoreNote
+                ? `<label class="checkout-note">
+                    <span>Catatan untuk Gerai</span>
+                    <input type="text" placeholder="Contoh: jangan sertakan invoice harga" />
+                  </label>`
+                : ''
+            }
           </section>
 
           ${
@@ -4390,31 +5110,21 @@ function checkoutPage() {
               <h2 class="checkout-title-label">${icon('card', 'h-5 w-5')} Pembayaran</h2>
             </div>
             ${
-              isCartBelanjaCheckout
+              isPaymentPlanSelectable
                 ? `<div class="checkout-payment-section">
-                    <div class="checkout-payment-info-alert">
-                        ${icon('bank', 'h-5 w-5')}
-                        <div>
-                          <strong>Sekali Bayar</strong>
-                        <p>Pesanan dari Keranjang Belanja dibayar satu kali, tanpa perpanjangan otomatis.</p>
-                        </div>
-                      </div>
-                    </div>`
-                : isCartLanggananCheckout
-                  ? `<div class="checkout-payment-section">
-                      <div class="checkout-payment-info-alert">
-                        ${icon('refresh', 'h-5 w-5')}
-                        <div>
-                          <strong>Perpanjang Otomatis</strong>
-                          <p>Pesanan dari Keranjang Langganan akan diperbarui otomatis sehingga Anda tidak perlu melakukan perpanjangan secara manual.</p>
-                        </div>
-                      </div>
-                    </div>`
-                : `<div class="checkout-payment-section">
                     <p>Opsi Pembayaran</p>
                     <div class="checkout-plan-grid">
                       ${paymentPlanOption('once', 'Sekali Bayar', 'Bayar penuh untuk pesanan ini saja', 'bank')}
-                      ${paymentPlanOption('recurring', 'Perpanjang Otomatis', 'Tagihan berikutnya diproses otomatis', 'refresh')}
+                      ${paymentPlanOption('recurring', 'Perpanjang Otomatis', 'Tagihan berikutnya diproses otomatis', 'refresh', null, hasAutoRenewPromo)}
+                    </div>
+                  </div>`
+                : `<div class="checkout-payment-section">
+                    <div class="checkout-payment-info-alert">
+                      ${icon(paymentPlanConstraint.icon, 'h-5 w-5')}
+                      <div>
+                        <strong>${paymentPlanConstraint.title}</strong>
+                        <p>${paymentPlanConstraint.description}</p>
+                      </div>
                     </div>
                   </div>`
             }
@@ -4497,7 +5207,7 @@ function checkoutPromoEntry(appliedPromo, discount) {
   `;
 }
 
-function paymentPlanOption(value, name, desc, iconName, lockedPlan = null) {
+function paymentPlanOption(value, name, desc, iconName, lockedPlan = null, hasPromo = false) {
   const checked = selectedPaymentPlan === value;
   const isLocked = Boolean(lockedPlan);
   const isDisabled = isLocked && lockedPlan !== value;
@@ -4506,7 +5216,7 @@ function paymentPlanOption(value, name, desc, iconName, lockedPlan = null) {
       <input type="radio" name="paymentPlan" value="${value}" ${checked ? 'checked' : ''} ${isLocked ? 'disabled' : ''} />
       ${icon(iconName, 'h-5 w-5')}
       <span>
-        <strong>${name}</strong>
+        <strong class="checkout-plan-title">${name}${hasPromo ? badge('Promo', 'soft-red', 'checkout-plan-promo-badge') : ''}</strong>
         <small>${desc}</small>
       </span>
     </label>
@@ -4524,6 +5234,20 @@ function paymentMethodOption(method) {
         <small>${method.desc}</small>
       </span>
     </label>
+  `;
+}
+
+function autoPromoSnackbarMarkup() {
+  if (!autoPromoSnackbar) {
+    return '';
+  }
+  const snackbarIcon = autoPromoSnackbarType === 'success' ? 'check' : 'info';
+
+  return `
+    <div class="checkout-auto-promo-snackbar is-${autoPromoSnackbarType}" role="status" aria-live="polite">
+      ${icon(snackbarIcon, 'h-4 w-4')}
+      <span>${autoPromoSnackbar}</span>
+    </div>
   `;
 }
 
@@ -4595,9 +5319,10 @@ function addressManagerModal() {
     address: '',
     courierNote: '',
   };
-  const draftDistrictMeta = resolveDistrictMeta(draft.district || '');
-  const draftCity = draft.city || draftDistrictMeta.city;
-  const draftProvince = draft.province || draftDistrictMeta.province;
+  const draftProvince = draft.province || '';
+  const draftCity = draft.city || '';
+  const cityOptions = addressCityOptions(draftProvince);
+  const districtOptions = addressDistrictOptions(draftProvince, draftCity);
 
   const listContent = checkoutAddresses.length
     ? `
@@ -4658,28 +5383,30 @@ function addressManagerModal() {
         <input type="text" value="${draft.phone}" data-address-field="phone" placeholder="08xx" />
       </label>
       <label>
-        <span>Kecamatan</span>
-        <input type="text" value="${draft.district || ''}" data-address-field="district" placeholder="Contoh: Palmerah" />
+        <span>Provinsi</span>
+        <select data-address-field="province">
+          ${addressSelectOptions(addressProvinceOptions(), draftProvince, 'Pilih provinsi')}
+        </select>
       </label>
-      ${
-        draft.city || draft.province
-          ? `<label>
-              <span>Kota/Kabupaten</span>
-              <input type="text" value="${draftCity}" data-address-field="city" />
-            </label>
-            <label>
-              <span>Provinsi</span>
-              <input type="text" value="${draftProvince}" data-address-field="province" />
-            </label>`
-          : ''
-      }
+      <label>
+        <span>Kota/Kabupaten</span>
+        <select data-address-field="city" ${draftProvince ? '' : 'disabled'}>
+          ${addressSelectOptions(cityOptions, draftCity, draftProvince ? 'Pilih kota/kabupaten' : 'Pilih provinsi dahulu')}
+        </select>
+      </label>
+      <label>
+        <span>Kecamatan</span>
+        <select data-address-field="district" ${draftCity ? '' : 'disabled'}>
+          ${addressSelectOptions(districtOptions, draft.district || '', draftCity ? 'Pilih kecamatan' : 'Pilih kota/kabupaten dahulu')}
+        </select>
+      </label>
       <label>
         <span>Alamat Lengkap</span>
         <textarea data-address-field="address" placeholder="Nama jalan, nomor rumah, RT/RW, kode pos">${draft.address}</textarea>
       </label>
       <label>
         <span>Catatan untuk Kurir (Opsional)</span>
-        <textarea data-address-field="courierNote" placeholder="Contoh: titip ke resepsionis">${draft.courierNote || ''}</textarea>
+        <input type="text" value="${draft.courierNote || ''}" data-address-field="courierNote" placeholder="Warna rumah, patokan, pesan khusus, dll." />
       </label>
       <div class="checkout-modal-actions">
         <button class="btn btn-secondary" type="button" data-address-cancel>Batal</button>
@@ -4820,10 +5547,18 @@ function paymentMethodModal() {
             .map(
               ([group, methods]) => {
                 const isOpen = openPaymentGroups.includes(group);
+                const previewLogos = methods.map((method) => method.logo);
                 return `
                 <section class="payment-modal-group ${isOpen ? 'is-open' : ''}">
                   <button class="payment-modal-group-toggle" type="button" data-payment-group-toggle="${group}" aria-expanded="${isOpen}">
-                    <span>${paymentGroupIcon(group)} <span>${group}</span></span>
+                    <span class="payment-modal-group-title">${paymentGroupIcon(group)} <span>${group}</span></span>
+                    ${
+                      isOpen
+                        ? ''
+                        : `<span class="payment-modal-group-preview" aria-hidden="true">
+                            ${previewLogos.map((logo) => paymentLogo(logo)).join('')}
+                          </span>`
+                    }
                     ${icon('chevron-down', `h-5 w-5 ${isOpen ? 'rotate-180' : ''}`)}
                   </button>
                   ${
@@ -5028,6 +5763,40 @@ function bindEvents() {
     element.addEventListener('click', closeMobileOverlays);
   });
 
+  document.querySelector('[data-all-categories-open]')?.addEventListener('click', () => {
+    isAllCategoriesSheetOpen = true;
+    closeMobileOverlays();
+    render();
+  });
+
+  document.querySelectorAll('[data-all-categories-close]').forEach((element) => {
+    element.addEventListener('click', () => {
+      isAllCategoriesSheetOpen = false;
+      openAllCategoriesGroups = [];
+      render();
+    });
+  });
+
+  document.querySelectorAll('[data-all-categories-group-toggle]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const slug = button.getAttribute('data-all-categories-group-toggle');
+      if (!slug) {
+        return;
+      }
+      openAllCategoriesGroups = openAllCategoriesGroups.includes(slug)
+        ? openAllCategoriesGroups.filter((item) => item !== slug)
+        : [...openAllCategoriesGroups, slug];
+      renderPreservingScroll(['.all-categories-sheet-content']);
+    });
+  });
+
+  document.querySelectorAll('[data-all-categories-link]').forEach((link) => {
+    link.addEventListener('click', () => {
+      isAllCategoriesSheetOpen = false;
+      openAllCategoriesGroups = [];
+    });
+  });
+
   document.querySelectorAll('[data-auth-open]').forEach((button) => {
     button.addEventListener('click', () => {
       authMode = button.getAttribute('data-auth-open') === 'register' ? 'register' : 'login';
@@ -5139,6 +5908,7 @@ function bindEvents() {
       isAuthenticated = false;
       pendingAuthRedirect = '';
       pendingWishlistProductId = null;
+      pendingAddressManagerOpen = false;
       closeMobileOverlays();
       render();
     });
@@ -5533,6 +6303,12 @@ function bindEvents() {
     button.addEventListener('click', () => {
       const action = button.getAttribute('data-qty');
       const product = getSelectedProduct();
+      if (isLockedSubscriptionProduct(product)) {
+        quantity = 1;
+        shouldAnimatePurchaseSheet = false;
+        render();
+        return;
+      }
       const maxQuantity = Math.max(Math.min(product.stock, 10), 1);
       quantity = action === 'plus' ? Math.min(quantity + 1, maxQuantity) : Math.max(quantity - 1, 1);
       shouldAnimatePurchaseSheet = false;
@@ -5720,6 +6496,11 @@ function bindEvents() {
 
   document.querySelectorAll('[data-add-to-cart]').forEach((button) => {
     button.addEventListener('click', (event) => {
+      if (isLockedSubscriptionProduct(getSelectedProduct())) {
+        event.preventDefault();
+        return;
+      }
+
       if (
         event.currentTarget.classList.contains('pdp-cart-action') &&
         window.matchMedia('(max-width: 640px)').matches
@@ -5767,6 +6548,10 @@ function bindEvents() {
     if (!window.matchMedia('(max-width: 640px)').matches) {
       return;
     }
+    if (isLockedSubscriptionProduct(getSelectedProduct())) {
+      event.preventDefault();
+      return;
+    }
     event.preventDefault();
     openPurchaseSheet('cart');
   });
@@ -5811,6 +6596,7 @@ function bindEvents() {
       selectedPaymentPlan = event.target.value;
       selectedPaymentMethod = selectedPaymentPlan === 'once' ? 'bca-va' : 'credit-card';
       isPaymentTermsExpanded = false;
+      syncAutoRenewPromo(checkoutOrderItems(), { notify: true });
       render();
     });
   });
@@ -5822,13 +6608,27 @@ function bindEvents() {
     });
   });
 
-  document.querySelector('[data-address-manager-open]')?.addEventListener('click', () => {
-    isAddressManagerOpen = true;
-    addressFormMode = 'list';
-    editingAddressId = null;
-    addressDraft = null;
-    openAddressMenuId = null;
-    render();
+  document.querySelectorAll('[data-address-manager-open]').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!isAuthenticated) {
+        pendingAddressManagerOpen = true;
+        authMode = 'login';
+        authStep = 'identifier';
+        authIdentifier = '';
+        authIdentifierError = '';
+        authFeedback = '';
+        closeMobileOverlays();
+        render();
+        return;
+      }
+
+      isAddressManagerOpen = true;
+      addressFormMode = 'list';
+      editingAddressId = null;
+      addressDraft = null;
+      openAddressMenuId = null;
+      render();
+    });
   });
 
   document.querySelector('[data-address-empty-add]')?.addEventListener('click', () => {
@@ -5867,6 +6667,7 @@ function bindEvents() {
       isAddressManagerOpen = false;
       addressFormMode = 'list';
       openAddressMenuId = null;
+      showSnackbar('Alamat pengiriman berhasil dipilih.', 'success');
       render();
     });
   });
@@ -5940,29 +6741,34 @@ function bindEvents() {
     }
     addressDeleteCandidateId = null;
     openAddressMenuId = null;
+    showSnackbar('Alamat pengiriman berhasil dihapus.', 'success');
     render();
   });
 
   document.querySelectorAll('[data-address-field]').forEach((field) => {
-    field.addEventListener('input', () => {
+    const updateAddressField = () => {
       const key = field.getAttribute('data-address-field');
       if (!key) {
         return;
       }
       addressDraft = addressDraft || {};
       addressDraft[key] = field.value;
-    });
 
-    if (field.getAttribute('data-address-field') === 'district') {
-      field.addEventListener('blur', () => {
-        addressDraft = addressDraft || {};
-        addressDraft.district = field.value;
-        const districtMeta = resolveDistrictMeta(field.value);
-        addressDraft.city = districtMeta.city;
-        addressDraft.province = districtMeta.province;
+      if (key === 'province') {
+        const cityOptions = addressCityOptions(field.value);
+        addressDraft.city = cityOptions[0] || '';
+        addressDraft.district = addressDistrictOptions(field.value, addressDraft.city)[0] || '';
         render();
-      });
-    }
+        return;
+      }
+
+      if (key === 'city') {
+        addressDraft.district = addressDistrictOptions(addressDraft.province, field.value)[0] || '';
+        render();
+      }
+    };
+
+    field.addEventListener(field.tagName === 'SELECT' ? 'change' : 'input', updateAddressField);
   });
 
   document.querySelector('[data-address-cancel]')?.addEventListener('click', () => {
@@ -5974,20 +6780,20 @@ function bindEvents() {
 
   document.querySelector('[data-address-save]')?.addEventListener('click', () => {
     const draft = addressDraft || {};
-    const districtMeta = resolveDistrictMeta(draft.district || '');
     const normalizedAddress = {
       id: editingAddressId || `address-${Date.now()}`,
       label: draft.label?.trim() || 'Alamat',
       recipient: draft.recipient?.trim() || 'Penerima',
       phone: draft.phone?.trim() || 'Nomor belum diisi',
       district: draft.district?.trim() || '',
-      city: draft.city?.trim() || districtMeta.city,
-      province: draft.province?.trim() || districtMeta.province,
+      city: draft.city?.trim() || '',
+      province: draft.province?.trim() || '',
       address: draft.address?.trim() || 'Alamat belum lengkap',
       courierNote: draft.courierNote?.trim() || '',
     };
 
-    if (addressFormMode === 'edit') {
+    const isEditingAddress = addressFormMode === 'edit';
+    if (isEditingAddress) {
       const addressIndex = checkoutAddresses.findIndex((address) => address.id === editingAddressId);
       if (addressIndex >= 0) {
         checkoutAddresses[addressIndex] = normalizedAddress;
@@ -6001,6 +6807,7 @@ function bindEvents() {
     addressFormMode = 'list';
     editingAddressId = null;
     addressDraft = null;
+    showSnackbar(isEditingAddress ? 'Alamat pengiriman berhasil diubah.' : 'Alamat pengiriman berhasil ditambahkan.', 'success');
     render();
   });
 
@@ -6090,7 +6897,7 @@ function bindEvents() {
       openPaymentGroups = openPaymentGroups.includes(group)
         ? openPaymentGroups.filter((item) => item !== group)
         : [...openPaymentGroups, group];
-      render();
+      renderPreservingScroll(['.payment-modal-groups']);
     });
   });
 
@@ -6102,7 +6909,7 @@ function bindEvents() {
       if (selectedGroup && !openPaymentGroups.includes(selectedGroup)) {
         openPaymentGroups = [...openPaymentGroups, selectedGroup];
       }
-      render();
+      renderPreservingScroll(['.payment-modal-groups']);
     });
   });
 
@@ -6286,15 +7093,18 @@ function bindEvents() {
           window.setTimeout(() => {
             wishlist.delete(productId);
             wishlistSavedAt.delete(productId);
+            showSnackbar('Produk dihapus dari wishlist.', 'info');
             render();
           }, 340);
           return;
         }
         wishlist.delete(productId);
         wishlistSavedAt.delete(productId);
+        showSnackbar('Produk dihapus dari wishlist.', 'info');
       } else {
         wishlist.add(productId);
         wishlistSavedAt.set(productId, Date.now());
+        showSnackbar('Produk ditambahkan ke wishlist.', 'success');
       }
       render();
     });
@@ -6370,8 +7180,15 @@ function scrollRouteToTopIfNeeded() {
 function render() {
   const route = window.location.hash.replace('#', '') || 'home';
   const app = document.querySelector('#app');
+  if (route !== 'home') {
+    isAllCategoriesSheetOpen = false;
+  }
   if (route !== 'search') {
     activeSearchFilter = '';
+  }
+  if (route !== 'checkout' && appliedPromoCode === 'AUTORENEW10') {
+    appliedPromoCode = '';
+    autoPromoSnackbar = '';
   }
 
   if (route === 'product') {
@@ -6428,7 +7245,19 @@ function render() {
   }
 
   app.insertAdjacentHTML('beforeend', authDialog());
+  if (route !== 'checkout') {
+    app.insertAdjacentHTML('beforeend', addressManagerModal());
+    app.insertAdjacentHTML('beforeend', addressDeleteConfirmModal());
+  }
+  app.insertAdjacentHTML('beforeend', autoPromoSnackbarMarkup());
   bindEvents();
+  if (autoPromoSnackbar) {
+    window.clearTimeout(autoPromoSnackbarTimer);
+    autoPromoSnackbarTimer = window.setTimeout(() => {
+      autoPromoSnackbar = '';
+      render();
+    }, 2600);
+  }
   window.requestAnimationFrame(syncProductDescriptionToggle);
   if (authMode) {
     window.requestAnimationFrame(() => {
@@ -6439,6 +7268,16 @@ function render() {
   if (pendingScrollRestoreY !== null) {
     window.scrollTo({ top: pendingScrollRestoreY, left: 0, behavior: 'auto' });
     pendingScrollRestoreY = null;
+  }
+  if (pendingElementScrollRestores.length) {
+    pendingElementScrollRestores.forEach(({ selector, scrollTop, scrollLeft }) => {
+      const element = document.querySelector(selector);
+      if (element) {
+        element.scrollTop = scrollTop;
+        element.scrollLeft = scrollLeft;
+      }
+    });
+    pendingElementScrollRestores = [];
   }
 }
 

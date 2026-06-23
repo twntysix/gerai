@@ -1,0 +1,30 @@
+<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="900" rx="48" fill="#052B4F"/>
+  <rect x="0" y="0" width="900" height="900" rx="48" fill="url(#bg)"/>
+  <circle cx="720" cy="155" r="156" fill="#0B69B3" opacity=".32"/>
+  <circle cx="188" cy="720" r="210" fill="#F5B945" opacity=".22"/>
+  <path d="M138 668h624" stroke="#80B7DD" stroke-width="4" stroke-linecap="round" opacity=".35"/>
+  <path d="M168 620h564" stroke="#80B7DD" stroke-width="3" stroke-linecap="round" opacity=".24"/>
+  <rect x="146" y="300" width="608" height="334" rx="34" fill="#FFFFFF"/>
+  <rect x="178" y="344" width="250" height="34" rx="17" fill="#E1F0FF"/>
+  <rect x="178" y="404" width="200" height="22" rx="11" fill="#D8DDE6"/>
+  <rect x="178" y="448" width="260" height="22" rx="11" fill="#D8DDE6"/>
+  <rect x="178" y="492" width="226" height="22" rx="11" fill="#D8DDE6"/>
+  <rect x="178" y="552" width="190" height="34" rx="17" fill="#00559A"/>
+  <rect x="478" y="356" width="206" height="206" rx="30" fill="#F7FAFC"/>
+  <path d="M555 440c0-23 18-42 41-42s41 19 41 42v18h-82v-18Z" fill="#FFCC00"/>
+  <path d="M544 458h104v34c0 16-13 29-29 29h-46c-16 0-29-13-29-29v-34Z" fill="#00559A"/>
+  <path d="M536 457h120" stroke="#003A66" stroke-width="12" stroke-linecap="round"/>
+  <path d="M534 370l-26 70M668 370l26 70" stroke="#F0B02E" stroke-width="16" stroke-linecap="round"/>
+  <path d="M532 534l130-130" stroke="#0A426F" stroke-width="12" stroke-linecap="round"/>
+  <text x="450" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#FFFFFF">Kompas Professional</text>
+  <text x="450" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="58" font-weight="700" fill="#FFCC00">Mining</text>
+  <text x="450" y="710" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#FFFFFF">Akses Intelijen Industri 1 Tahun</text>
+  <defs>
+    <linearGradient id="bg" x1="76" y1="74" x2="792" y2="842" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00559A"/>
+      <stop offset=".55" stop-color="#06436F"/>
+      <stop offset="1" stop-color="#071F36"/>
+    </linearGradient>
+  </defs>
+</svg>
